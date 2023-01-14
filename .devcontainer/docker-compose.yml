@@ -1,7 +1,10 @@
 version: '3.8'
 services:
   devcontainer:
-    image: mcr.microsoft.com/devcontainers/base:jammy
+    # image: mcr.microsoft.com/devcontainers/base:jammy
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ../..:/workspaces:cached
     network_mode: service:db
